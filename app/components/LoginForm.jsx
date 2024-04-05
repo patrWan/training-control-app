@@ -52,7 +52,7 @@ export default function LoginForm() {
             body: JSON.stringify({username, password})
         };
     
-        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/login`, requestOptions).then(response => {return response.json()});
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URL_PROD}/api/login`, requestOptions).then(response => {return response.json()});
 
         if(!response.length){
            alert('Usuario o contraseña no encontrados!')
