@@ -2,6 +2,10 @@ import { getRequestContext } from '@cloudflare/next-on-pages'
 
 export const runtime = 'edge'
 
+export async function GET(request) {
+  return new Response({hola : 'hola'})
+}
+
 export async function POST(request) {
   const {username, password} = await request.json();
 
