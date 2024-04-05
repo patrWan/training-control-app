@@ -1,7 +1,9 @@
 'use client'
 import {redirectTo} from '@/app/actions/loginActions';
 import { useState } from 'react';
+
 export const runtime = 'edge'
+
 export default function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
