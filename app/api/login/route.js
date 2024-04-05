@@ -10,7 +10,9 @@ export async function POST(request) {
 
   const {username, password} = await request.json();
 
-  const stmt = getRequestContext().env.DB.prepare('SELECT * FROM Users WHERE UserName = ? AND UserPassword = ?').bind(username, password);
+  console.log(username);
+
+  const stmt = getRequestContext().DB.prepare('SELECT * FROM Users WHERE UserName = ? AND UserPassword = ?').bind(username, password);
 
   const {results} = await stmt.all();
 
