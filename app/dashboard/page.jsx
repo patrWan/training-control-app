@@ -24,21 +24,13 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="flex min-h-screen flex-col items-center  bg-slate-100">
+    <div className="flex h-full pt-14 flex-col items-center bg-slate-100">
       <h1 className="text-amber-800 my-10">Bienvenid@  ! <span className="font-bold text-lg">{user.UserName}</span></h1>
       <div className="md:flex md:flex-row">
           <BasicLineChart data={session} type={'Salto de cuerda'}/>
           <BasicLineChart data={session_sentadillas} type={'Sentadillas'}/>
           <BasicLineChart data={session} type={'Salto de cuerda'}/>
       </div>
-
-
-      <button
-        className="border-2 border-red-800 text-red-800 bg-zinc-900 p-2"
-        onClick={() => logOut()}
-      >
-        Cerrar Sesión
-      </button>
     </div>
   )
 }

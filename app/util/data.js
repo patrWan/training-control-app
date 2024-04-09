@@ -46,7 +46,7 @@ export const session = [
         date : new Date('2024-04-09'),
         set : 5,
         repetition : 1000,
-        exercise_id : 2,
+        exercise_id : 1,
         user_id : 1,
     },
     
@@ -57,14 +57,14 @@ export const session_sentadillas = [
         date : new Date('2024-04-10'),
         set : 3,
         repetition : 12,
-        exercise_id : 'Sentadillas',
+        exercise_id : 3,
         user_id : 1,
     },
     {
         date : new Date('2024-04-11'),
         set : 2,
         repetition : 20,
-        exercise_id : 'Sentadillas',
+        exercise_id : 3,
         user_id : 1,
     },
 ];
