@@ -1,22 +1,26 @@
 import * as React from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 
-export default function BasicLineChart() {
+export default function BasicLineChart({ data, type }) {
     return (
-        <LineChart
-            xAxis={[{ data: [1, 2, 3, 5, 8, 10], fill : ['#ccc'], stroke :['#ccc'],  }]}
-            series={[
-                {
-                    data: [3, 5.5, 2, 8.5, 1.5, 5],
-                    color: '#fdb462',
+        <div className="bg-white text-white h-80 m-2 w-96 rounded-lg shadow-md my-4">
+            <LineChart
+                xAxis={[{
+                    dataKey: 'date', scaleType: 'band',
+                    valueFormatter: (date, context) => context.location === 'tick' ?
+                        date.toLocaleString("es-CL", { day: "numeric", month: 'short' }) : ''
+                }]}
+                series={[
+                    {
+                        dataKey: 'repetition',
+                        color: '#fdb462',
+                        label: type
 
-                },
-            ]}
-            width={500}
-            height={300}
-            grid={{ vertical: true, horizontal: true }}
+                    },
+                ]}
+                dataset={data}
+            />
+        </div>
 
-            
-        />
     );
 }
